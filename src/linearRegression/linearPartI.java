@@ -1,11 +1,13 @@
 package linearRegression;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class linearPartI {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
 
         int n;
         do {
@@ -58,7 +60,10 @@ public class linearPartI {
 
         System.out.println("Coeficiente a: " + coeficientes[0]);
         System.out.println("Coeficiente b: " + coeficientes[1]);
-        System.out.println("Domínio: y =" + coeficientes[1] + "x + " + coeficientes[0] + "\nD[" + xArray[0] + "," +xArray[xyArray.length-1] + "]");
+
+        System.out.printf("Expressão: y= %.2fx + %.2f. \nDomínio: [%.2f, %.2f]", coeficientes[0], coeficientes[1], xArray[0], xArray[xArray.length-1]);
+
+        veCalc(xArray, coeficientes);
 
         sc.close();
     }
@@ -106,4 +111,19 @@ public class linearPartI {
 
         return aproximacao;
     }
+
+    public static void veCalc(double[] xArray, double[] coeficientes) {
+        System.out.println("Valores de ye: (y^-ymedia)²");
+
+        double ySoma = 0;
+
+        for (int i = 0; i < xArray.length; i++) {
+            double resultado = coeficientes[1] * xArray[i] + coeficientes[0];
+            ySoma += resultado;
+            double yMedia = ySoma / xArray.length;
+            System.out.printf("Para x = %.3f, y = %.3f\n", xArray[i], resultado);
+            System.out.println(yMedia);
+        }
+    }
+
 }
