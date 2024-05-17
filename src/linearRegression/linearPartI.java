@@ -1,10 +1,10 @@
 package linearRegression;
-import linearRegression.methods.vtCalc;
+import linearRegression.methods.RCalc;
 import linearRegression.methods.GaussSeidel;
 
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
+
 
 public class linearPartI {
     public static void main(String[] args) {
@@ -54,7 +54,7 @@ public class linearPartI {
         System.out.println("Coeficiente b: " + coeficientes[1]);
         System.out.printf("Expressão: y= %.2fx + %.2f. \nDomínio: [%.2f, %.2f]", coeficientes[0], coeficientes[1], xArray[0], xArray[xArray.length-1]);
 
-        vtCalc.vtCalcValue(xArray, coeficientes, yArray);
+        RCalc.vtCalcValue(xArray, coeficientes, yArray);
 
         sc.close();
     }
