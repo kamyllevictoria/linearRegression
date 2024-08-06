@@ -1,1 +1,1 @@
-Program carried out based on statistical studies to calculate the linear coefficient
+Code developed in Java to solve problems related to the calculation of the linear coefficient in Linear Regressions, in statistics.
